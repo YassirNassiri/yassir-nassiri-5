@@ -1,22 +1,17 @@
-// Création d'une nouvelle div dans le document
-const nouvelleDiv = document.createElement('div');
+let div = document.createElement("div");
+let p = document.createElement("p");
 
-// Création d'un paragraphe p à l'intérieur de la div
-const paragraphe = document.createElement('p');
+p.textContent = "Ceci est un paragraphe";
 
-// Ajout de texte initial au paragraphe
-paragraphe.textContent = "Ceci est un paragraphe";
+div.appendChild(p);
+document.body.appendChild(div);
 
-// Ajout du paragraphe à la div
-nouvelleDiv.appendChild(paragraphe);
+p.textContent = "Le texte a été modifié";
 
-// Ajout de la div au body du document
-document.body.appendChild(nouvelleDiv);
+p.style.backgroundColor = "lightblue";
+p.style.textAlign = "center";
+p.style.padding = "10px";
 
-// Modification du texte du paragraphe
-paragraphe.textContent = "Le texte a été modifié";
-
-// Modification du style CSS du paragraphe
-paragraphe.style.backgroundColor = "lightblue";
-
-
+div.addEventListener("click", function() {
+    p.textContent = "Un clic a été détecté";
+});
